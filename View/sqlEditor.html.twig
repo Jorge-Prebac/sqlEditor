@@ -1,0 +1,80 @@
+
+{% extends "Master/MenuTemplate.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+
+
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <form name="sqlEditorForm" action="{{ fsc.url() }}" method="post" class="form">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-header">
+                            <h1>
+                                <i class="fas fa-database" aria-hidden="true"></i>&nbsp; SQL Editor
+
+                            </h1>
+                            <p class="help-block">
+                                <span class="glyphicon glyphicon-info-sign"></span> Solamente los administradores pueden ejecutar SQL directamente.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-10">
+                        <div class="form-group">
+                            <textarea name="query" class="form-control" rows="4" placeholder="SENTENCIA SQL...">{{ fsc.query }}</textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <button class="btn btn-primary btn-lg" type="submit">
+                            <span class="fas fa-database"></span>&nbsp exec-query
+
+                        </button>
+                        <br/>
+                    </div>
+                </div>
+                <div class="row">
+                    {% if fsc.results %}
+                        <div class="table-responsive">
+                            <table class="table table-striped ">
+                                <thead class="thead-light">
+                                    <tr>
+                                        {% for title in fsc.columnsTitle() %}
+                                            <th class="text-left" >
+                                                {{ title }}
+                                            </th>
+                                        {% endfor %}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for values in fsc.results %}
+                                        <tr class="Row ">
+                                            {% for value in values %}
+                                                <td class="text-left">
+                                                    {{ value }}
+                                                </td>
+                                            {% endfor %}
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </form>
+
+
+
+
+
+
+    </div>
+{% endblock %}
