@@ -1,0 +1,12 @@
+{
+    "table-names": "Tablas existentes",
+    "develop": "desarrollo",
+    "table-fields": "Campos de la tabla",
+    "only-administrator": "Sólo los administradores pueden ejecutar consultas",
+    "exec-query": "Ejecutar consulta",
+    "sentence-sql": "SENTENCIA SQL",
+    "sql-editor": "SQL Editor",
+    "results": "Resultados",
+    "without-results": "Sin resultados",
+    "invalid-sentence": "Sentencia no válida"
+}

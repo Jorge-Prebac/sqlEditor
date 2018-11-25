@@ -1,0 +1,12 @@
+{
+    "table-names": "Table Names",
+    "evelop": "develop",
+    "table-fields": "Table Fields",
+    "only-administrator": "Only admnistrator user can execute querys",
+    "exec-query": "Exec query",
+    "sentence-sql": "SQL SENTENCE",
+    "sql-editor": "SQL Editor",
+    "results": "Results",
+    "without-results": "Without Results",
+    "invalid-sentence": "Invalid sentence"
+}

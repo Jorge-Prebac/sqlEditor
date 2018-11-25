@@ -2,6 +2,10 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/Proyectos/Programacion/php/Facturascripts2018/Plugins/sqlEditor/Controller/SqlEditor.php</file>
+            <file>file:/D:/Proyectos/Programacion/php/Facturascripts2018/Plugins/sqlEditor/Assets/JS/sqlEditor.js</file>
+            <file>file:/D:/Proyectos/Programacion/php/Facturascripts2018/Plugins/sqlEditor/View/sqlEditor.html.twig</file>
+        </group>
     </open-files>
 </project-private>

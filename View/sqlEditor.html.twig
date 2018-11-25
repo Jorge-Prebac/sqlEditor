@@ -13,19 +13,47 @@
                     <div class="col-sm-12">
                         <div class="page-header">
                             <h1>
-                                <i class="fas fa-database" aria-hidden="true"></i>&nbsp; SQL Editor
-
+                                <i class="fas fa-database" aria-hidden="true"></i>&nbsp;{{ i18n.trans('sql-editor') }}
                             </h1>
                             <p class="help-block">
-                                <span class="glyphicon glyphicon-info-sign"></span> Solamente los administradores pueden ejecutar SQL directamente.
+                                <span class="glyphicon glyphicon-info-sign"></span> {{ i18n.trans('only-administrator') }}
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <strong><label for="tables-list">{{ i18n.trans('table-names') }}</label></strong>
+                            <select class="form-control" id="tables-list" onchange="getFields();">
+                                {% if fsc.tables %}
+                                    {% for tablename in fsc.tables %}
+                                        <option {{tablename}}> {{ tablename }} </option>
+                                    {% endfor %}
+                                {% endif %}
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <strong><label for="fields">{{ i18n.trans('table-fields') }}</label></strong>
+                            <textarea name="fields" id="fields" class="form-control" rows="4" readonly="true" placeholder="{{ i18n.trans('table-fields') }}">
+                                {% if fsc.columnsTable %}
+                                    {% for column in fsc.columnsTable %}
+                                        {{column}} <br>
+                                    {% endfor %}
+                                {% endif %}
+                            </textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
                     <div class="col-sm-10">
                         <div class="form-group">
-                            <textarea name="query" class="form-control" rows="4" placeholder="SENTENCIA SQL...">{{ fsc.query }}</textarea>
+                            <strong><label for="query">{{ i18n.trans('sentence-sql') }}</label></strong>
+                            <textarea name="query" class="form-control" rows="4" placeholder="{{ i18n.trans('sentence-sql') }}">{{ fsc.query }}</textarea>
                         </div>
                     </div>
 
@@ -34,12 +62,16 @@
                 <div class="row">
                     <div class="col-4">
                         <button class="btn btn-primary btn-lg" type="submit">
-                            <span class="fas fa-database"></span>&nbsp exec-query
+                            <span class="fas fa-database"></span>&nbsp {{ i18n.trans('exec-query') }}
 
                         </button>
                         <br/>
                     </div>
                 </div>
+                <div class="row">
+                    <h2><strong>{{ i18n.trans('results') }}</strong></h2>
+                </div>
+
                 <div class="row">
                     {% if fsc.results %}
                         <div class="table-responsive">
