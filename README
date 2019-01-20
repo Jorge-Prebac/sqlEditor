@@ -1,0 +1,9 @@
+Se trata de un plugin de Facturascripts 2018.
+Es la conversión del Plugin sqlEditor que había en FacturaScripts 2015.
+Permite mostrar en pantalla el listado de tablas que componen la base de datos.
+Al seleccionar una tabla, mostrará los campos de la misma.
+Tendremos un cuadro tipo memo que permitirá ejecutar consultas NO sentencias.
+Es decir, no se ejecutan sentencias delete, insert,drop, etc.
+
+Por favor, siéntete libre de notificar sugerencias o mejor todavía, desarrollarlas para bien de toda la comunidad
+
