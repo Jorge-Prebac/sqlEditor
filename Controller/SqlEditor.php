@@ -26,7 +26,7 @@ class SqlEditor extends \FacturaScripts\Core\Base\Controller
         $pageData = parent::getPageData();
         $pageData['title'] = 'sql Editor';
         $pageData['menu'] = 'develop';
-        $pageData[icon] = 'fas fa-database';
+        $pageData['icon'] = 'fas fa-database';
 
         return $pageData;
     }
