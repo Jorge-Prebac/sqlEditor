@@ -25,7 +25,7 @@ class SqlEditor extends \FacturaScripts\Core\Base\Controller
     {
         $pageData = parent::getPageData();
         $pageData['title'] = 'sql Editor';
-        $pageData['menu'] = 'develop';
+        $pageData['menu'] = 'admin';
         $pageData['icon'] = 'fas fa-database';
 
         return $pageData;
@@ -41,9 +41,9 @@ class SqlEditor extends \FacturaScripts\Core\Base\Controller
     {
         switch ($action) {
             case 'getFields':
-                $tableName = $this->request->get('table');
-                if ($tableName !== '') {
-                    $this->columnsTable = $this->getColumns($tableName);
+                $tablename = $this->request->get('table');
+                if ($tablename !== '') {
+                    $this->columnsTable = $this->getColumns($tablename);
                     $this->setTemplate(false);
                     $this->response->setContent(json_encode(array_keys($this->columnsTable)));
                 }
@@ -75,11 +75,11 @@ class SqlEditor extends \FacturaScripts\Core\Base\Controller
                 if ($this->validQuery()) {
                     $this->execQuery();
                 } else {
-                    $this->miniLog->alert($this->i18n->trans('invalid-sentence'));
+                    $this->toolBox()->i18nLog()->warning('invalid-sentence');
                     $this->results = [];
                 }
             } else {
-                $this->miniLog->aler('only-admin');
+                $this->toolBox()->i18nLog()->warning ('only-administrator');
             }
         }
         $action = $this->request->request->get('action');
@@ -129,7 +129,7 @@ class SqlEditor extends \FacturaScripts\Core\Base\Controller
         if ($data) {
             $this->results = $data;
         } else {
-            $this->miniLog->notice($this->i18n->trans('without-results'));
+            $this->toolBox()->i18nLog()->notice ('without-results');
         }
     }
 
@@ -155,14 +155,14 @@ class SqlEditor extends \FacturaScripts\Core\Base\Controller
 
     /**
      * Return column names of table
-     * @param string $tableName
+     * @param string $tablename
      * @return Array
      */
-    public function getColumns($tableName = ''): Array
+    public function getColumns($tablename = ''): Array
     {
         if ($tablename !== '') {
             $dataBase = new \FacturaScripts\Core\Base\DataBase();
-            return $dataBase->getColumns($tableName);
+            return $dataBase->getColumns($tablename);
         } else {
             return [];
         }
