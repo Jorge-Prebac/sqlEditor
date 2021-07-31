@@ -1,6 +1,6 @@
 <?php
 /**
- * Con este plugin podrás ejecutar sentencias sql que muestren datos en pantalla
+ * Con este plugin podrás ejecutar sentencias Sql que muestren datos en pantalla
  * sentencias tipo select, show, etc.
  * Filtrará para evitar la ejecución de sentencias tipo Drop, delete, alter, etc.
  * @author Raul Jiménez <raljopa@gmail.com>
@@ -24,10 +24,9 @@ class SqlEditor extends \FacturaScripts\Core\Base\Controller
     public function getPageData(): Array
     {
         $pageData = parent::getPageData();
-        $pageData['title'] = 'sql Editor';
+        $pageData['title'] = 'Sql Editor';
         $pageData['menu'] = 'admin';
         $pageData['icon'] = 'fas fa-database';
-
         return $pageData;
     }
 
@@ -64,7 +63,7 @@ class SqlEditor extends \FacturaScripts\Core\Base\Controller
     public function privateCore(&$response, $user, $permisions)
     {
         parent::privateCore($response, $user, $permisions);
-        $this->setTemplate('sqlEditor');
+        $this->setTemplate('SqlEditor');
 
         $query = $this->request->get('query', '');
 

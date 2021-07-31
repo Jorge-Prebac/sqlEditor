@@ -41,7 +41,7 @@ function getFields()
             });
 
 
-            $("#fields").val('#Tabla--> ' +tablename +'\n'+ fieldnames);
+            $("#fields").val('#Tabla--> ' + tablename + '\n' + fieldnames);
 
         },
         error: function (xhr, status, error) {
