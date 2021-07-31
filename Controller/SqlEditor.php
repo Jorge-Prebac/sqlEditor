@@ -9,7 +9,7 @@ namespace FacturaScripts\Plugins\SqlEditor\Controller;
 
 use FacturaScripts\Core\Base;
 
-class SqlEditor extends \FacturaScripts\Core\Base\Controller
+class sqlEditor extends \FacturaScripts\Core\Base\Controller
 {
 
     public $query;
@@ -24,7 +24,7 @@ class SqlEditor extends \FacturaScripts\Core\Base\Controller
     public function getPageData(): Array
     {
         $pageData = parent::getPageData();
-        $pageData['title'] = 'Sql Editor';
+        $pageData['title'] = 'sql Editor';
         $pageData['menu'] = 'admin';
         $pageData['icon'] = 'fas fa-database';
         return $pageData;
@@ -63,7 +63,7 @@ class SqlEditor extends \FacturaScripts\Core\Base\Controller
     public function privateCore(&$response, $user, $permisions)
     {
         parent::privateCore($response, $user, $permisions);
-        $this->setTemplate('SqlEditor');
+        $this->setTemplate('sqlEditor');
 
         $query = $this->request->get('query', '');
 
