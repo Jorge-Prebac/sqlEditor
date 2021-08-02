@@ -5,7 +5,7 @@
  * Filtrará para evitar la ejecución de sentencias tipo Drop, delete, alter, etc.
  * @author Raul Jiménez <raljopa@gmail.com>
  */
-namespace FacturaScripts\Plugins\SqlEditor\Controller;
+namespace FacturaScripts\Plugins\sqlEditor\Controller;
 
 use FacturaScripts\Core\Base;
 
